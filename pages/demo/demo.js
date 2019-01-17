@@ -48,7 +48,7 @@ function initChart(canvas, width, height) {
     },
     
     title: {
-      text: 99,
+      text: wx.getStorageSync('testTotalScore'),
       x: 'center',
       y: 'center',
       textStyle: {
@@ -89,6 +89,7 @@ Page({
     }
   },
   data: {
+    testTotalScore :"",
     isShowModel: false,//控制弹窗是否显示，默认不显示
     isShowConfirm: false,//是否只显示确定按钮，默认不是
     ModelId: 0,//弹窗id
@@ -99,11 +100,11 @@ Page({
     }
   },
   onLoad: function (options) {
-    var storageSyncContent = wx.getStorageSync('storageTotalScore')
+    var testTotalScore = wx.getStorageSync('testTotalScore')
     this.setData({
-      storageSyncContent: storageSyncContent
+      testTotalScore: testTotalScore
     });
-    console.log(storageSyncContent);
+    console.log(testTotalScore);
 
 
     this.setData({
